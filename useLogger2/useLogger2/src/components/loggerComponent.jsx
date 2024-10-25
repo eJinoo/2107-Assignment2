@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import useLogger from "../hooks/useLogger";  // Import the useLogger hook
+import useLogger from "../hooks/useLogger"; 
 
 function LoggerComponent() {
-  const [scopeInput, setScopeInput] = useState(""); // State for the custom scope input
-  const [logType, setLogType] = useState("log"); // Default to 'log'
+  const [scopeInput, setScopeInput] = useState("");
+  const [logType, setLogType] = useState("log");
   const [message, setMessage] = useState("");
-  const [logs, setLogs] = useState([]); // State to keep all logs
+  const [logs, setLogs] = useState([]);
 
   const handleLog = () => {
     useLogger(logType, scopeInput, message)
     //setLogs((prevLogs) => [...prevLogs, logMessage]);
-    setMessage(""); // Clear message input after logging
+    setMessage(""); 
   };
 
   return (
